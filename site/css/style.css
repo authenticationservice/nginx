@@ -45,7 +45,7 @@ body {
 	opacity: 0.85;
 }
 
-#sad {
+.idiot-container img {
     position:absolute;
     width:160px;
     min-height:40px;
