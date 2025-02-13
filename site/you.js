@@ -111,11 +111,11 @@ function playBall() {
 	return true;
 }*/
 
-/*window.onmouseout = function () {
+window.onmouseout = function () {
 	proCreate();
 
 	return null;
-};*/
+};
 
 window.oncontextmenu = function() {
 	
