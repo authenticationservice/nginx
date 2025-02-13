@@ -1,21 +1,46 @@
 body {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 8vw;
-    size: 8vw;
-
-    animation: flashing 1s infinite step-end;
+	margin-left: 0;
+}
+		
+.info-container {
+	display: inline-flex;
+	padding: 7px;
+				
+	align-items: top;
 }
 
-@keyframes flashing {
-    0% {
-        background-color: black;
-        color: white;
-    }
+.info-container div {
+	margin-left: 7px;
+}
 
-    50% {
-        background-color: white;
-        -webkit-filter: invert(1);
-        filter: invert(1);
-    }
+.idiot-container {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.idiot-container video {
+	z-index: -100;
+			
+	width: 100%;
+	height: 100%;
+				
+	min-height: 100%; 
+				
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.links {
+	display: inline-block;
+}
+
+.speaker, .link {	
+	cursor: pointer;
+				
+	opacity: 0.85;
 }
