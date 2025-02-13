@@ -111,11 +111,11 @@ function playBall() {
 	return true;
 }*/
 
-window.onmouseout = function () {
+/*window.onmouseout = function () {
 	proCreate();
 
 	return null;
-};
+};*/
 
 window.oncontextmenu = function() {
 	
@@ -139,5 +139,10 @@ window.onbeforeunload = function() {
 
 (function () {
     flagRun = 1;
-    playBall();
+    playBall(); // Start moving the window immediately
+
+    // Open a new window after 1 second (1000 ms)
+    setTimeout(function () {
+        proCreate();
+    }, 1000);
 })();
