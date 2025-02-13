@@ -59,21 +59,15 @@ body {
 	transform: translate(-50%, -50%);
 }
 
-
-
-
-
-
-
-
 #video_box{
-    position:relative;
+	position:relative;
 }
+
 #video_overlays {
-    position:absolute;
-    width:160px;
-    min-height:40px;
-    z-index:300000;
-    bottom:10px;
-    left:10px;
+	position:absolute;
+	width:160px;
+	min-height:40px;
+	z-index:300000;
+	bottom:10px;
+	left:10px;
 }
