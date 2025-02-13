@@ -44,7 +44,7 @@ body {
 	opacity: 0.85;
 }
 
-.idiot-container img {
+.idiot-container img, #sad {
     	z-index: 200;
 			
 	width: 100%;
