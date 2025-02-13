@@ -102,14 +102,14 @@ function playBall() {
     }
 }
 
-window.onload = function () {
+/*window.onload = function () {
 	flagRun = 1;
 	
 	playBall();
 	bookmark();
 	
 	return true;
-}
+}*/
 
 window.onmouseout = function () {
 	proCreate();
