@@ -1,10 +1,5 @@
 document.addEventListener('click', musicPlay);
 
-(function () {
-    flagRun = 1;
-    playBall();
-})();
-
 function musicPlay() {
     var audio = document.getElementById('youare-audio');
 	var micon = document.getElementById('youare-micon');
@@ -141,3 +136,8 @@ window.onkeydown = function() {
 window.onbeforeunload = function() {
     return "Are you an idiot?";
 };
+
+(function () {
+    flagRun = 1;
+    playBall();
+})();
