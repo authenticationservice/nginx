@@ -98,7 +98,7 @@ function playBall() {
     
 	if (flagRun == 1) {
         window.moveTo(xPos, yPos);
-        setTimeout('playBall()', 1);
+        setTimeout('playBall()', 100);
     }
 }
 
