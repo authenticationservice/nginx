@@ -13,7 +13,7 @@ body {
 	margin-left: 7px;
 }
 
-.idiot-container {
+/*.idiot-container {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -21,7 +21,7 @@ body {
 	height: 100%;
 }
 
-/*.idiot-container video {
+.idiot-container video {
 	z-index: -100;
 			
 	width: 100%;
