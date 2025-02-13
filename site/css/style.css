@@ -44,3 +44,7 @@ body {
 				
 	opacity: 0.85;
 }
+
+.sad {
+	z-index: 9999;
+}
