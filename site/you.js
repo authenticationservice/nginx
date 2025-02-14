@@ -55,6 +55,26 @@ function openWindow(url) {
         var randomY = Math.floor(Math.random() * screenHeight);
 
         newWin.moveTo(randomX, randomY);
+
+        // Write custom content inside the blank page
+        newWin.document.write(`
+            <html>
+            <head>
+                <title>YOU ARE AN IDIOT</title>
+                <style>
+                    body { background: red; color: white; text-align: center; font-size: 24px; margin-top: 100px; }
+                </style>
+            </head>
+            <body>
+                <h1>You are an IDIOT! 😂</h1>
+                <script>
+                    setInterval(() => {
+                        document.body.style.background = document.body.style.background === 'red' ? 'blue' : 'red';
+                    }, 500);
+                </script>
+            </body>
+            </html>
+        `);
     }
 
     return newWin;
