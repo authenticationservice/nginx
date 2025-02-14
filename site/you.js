@@ -46,7 +46,6 @@ function changeTitle(title) {
 function openWindow(url) {
     var newWin = window.open(url, "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=357, height=330, titlebar=no, alwaysRaised=yes');
 
-    // Move the new window to a random location once
     if (newWin) {
         var screenWidth = screen.width - 357; // Keep within bounds
         var screenHeight = screen.height - 330;
@@ -55,6 +54,18 @@ function openWindow(url) {
         var randomY = Math.floor(Math.random() * screenHeight);
 
         newWin.moveTo(randomX, randomY);
+
+        // Generate a random background color
+        var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+
+        // Wait until the window loads, then change background color
+        newWin.document.write(`
+            <script>
+                document.body.style.backgroundColor = '${randomColor}';
+                document.body.style.margin = '0';
+                document.body.style.height = '100vh';
+            <\/script>
+        `);
     }
 
     return newWin;
