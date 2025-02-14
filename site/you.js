@@ -21,18 +21,12 @@ function openWindow(url) {
                     </style>
                 </head>
                 <body>
-                    <h1>AHHHHHH!</h1>
+                    <img src="https://i1.sndcdn.com/artworks-000664006093-hhm0rf-t500x500.jpg" width="500" height="333">
                     <script>
-                        const x = new Uint8Array(1024 * 1024 * 1024 * 0.5).fill(255); // 500MB
                         setInterval(() => {
                             if (document.body.style.background === 'red') {
                                 document.body.style.background = 'blue';
-                                document.querySelector('h1').textContent = 'HELP!';
-                            } else {
-                                document.body.style.background = 'red';
-                                document.querySelector('h1').textContent = 'AHHHHHH!';
-                            }
-                        }, 500);
+                            }, 500);
                     </script>
                 </body>
             </html>
