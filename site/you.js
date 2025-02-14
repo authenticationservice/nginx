@@ -52,7 +52,7 @@ function proCreate() {
         for (var i = 0; i < 5; i++) {
             openWindow('');
         }
-    }, 1); // Adjust delay as needed
+    }, 10); // Adjust delay as needed
 }
 
 window.onbeforeunload = function () {
