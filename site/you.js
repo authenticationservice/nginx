@@ -1,9 +1,9 @@
 function openWindow(url) {
-    var newWin = window.open(url, "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=1, height=1, titlebar=no, alwaysRaised=yes');
+    var newWin = window.open(url, "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=158, height=100, titlebar=no, alwaysRaised=yes');
 
     // Move the new window to a random location once
     if (newWin) {
-        var screenWidth = screen.width - 150; // Keep within bounds
+        var screenWidth = screen.width - 158; // Keep within bounds
         var screenHeight = screen.height - 100;
 
         var randomX = Math.floor(Math.random() * screenWidth);
