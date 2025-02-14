@@ -2,14 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="you.js"></script>
-    <title>:)</title>
-    <style>
-        body {
-            height: 100vh;
-            margin: 0;
-        }
-    </style>
+    <script scr="you.js"></script>
     <script>
         function getRandomColor() {
             const letters = '0123456789ABCDEF';
@@ -20,10 +13,16 @@
             return color;
         }
 
-        document.body.style.backgroundColor = getRandomColor();
+        document.write(`<style>body { background-color: ${getRandomColor()}; }</style>`);
     </script>
+    <title>:)</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
 </body>
 </html>
-
