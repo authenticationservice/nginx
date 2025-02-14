@@ -33,12 +33,8 @@ function openWindow(url) {
                                     return color;
                                 }
                         
-                                function setRandomBackgroundColor() {
-                                    document.body.style.backgroundColor = getRandomColor();
-                                }
-                        
                                 document.addEventListener('DOMContentLoaded', function() {
-                                    setRandomBackgroundColor();
+                                    document.body.style.backgroundColor = getRandomColor();
                                 });
                             </script>
                         </head>
