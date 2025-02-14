@@ -48,13 +48,14 @@ function openWindow(url) {
 }
 
 function proCreate() {
-    /*setInterval(() => {
-        for (var i = 0; i < 5; i++) {
-            openWindow('lol.html');
+    let counter = 0;
+    const interval = setInterval(() => {
+        openWindow('lol.html');
+        counter++;
+        if (counter >= 5) {
+            clearInterval(interval);
         }
-    }, 10); // Adjust delay as needed*/
-    openWindow('lol.html');
-    openWindow('lol.html');
+    }, 1000);
 }
 
 window.onbeforeunload = function () {
