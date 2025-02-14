@@ -44,7 +44,7 @@ function changeTitle(title) {
 }
 
 function openWindow(url) {
-    var newWin = window.open(url, "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=357, height=330, titlebar=no, alwaysRaised=yes');
+    var newWin = window.open("", "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=357, height=330, titlebar=no, alwaysRaised=yes');
 
     // Move the new window to a random location once
     if (newWin) {
