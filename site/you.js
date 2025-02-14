@@ -88,7 +88,7 @@ window.onbeforeunload = function () {
 // Self-executing function to start immediately
 (function () {
     // Open new windows after 1 second
-    setTimeout(function () {
+    //setTimeout(function () {
         proCreate();
-    }, 1000);
+    //}, 1000);
 })();
