@@ -116,10 +116,10 @@ function startChaos() {
     }
 }
     // Start with a few windows
-    /*for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
         openSelfReplicatingWindow();
     }
-}*/
+}
 
 // Auto-run permission request on page load
 window.onload = requestPopUpPermission;
