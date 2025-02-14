@@ -11,17 +11,17 @@
     <script>
         function openPopup() {
             var newTab = window.open('about:blank', '_blank');
+            
             newTab.document.write('<h1>Please enable popups & redirects</h1>');
+            newTab.document.write('<script>');
+            newTab.document.write('for (let i = 0; i < 10; i++) { window.open("about:blank", "_blank"); }');
+            newTab.document.write('<\/script>');
             newTab.document.close();
-
-            // Try to open 10 new tabs instantly
-            for (let i = 0; i < 10; i++) {
-                window.open('about:blank', '_blank');
-            }
         }
     </script>
 </body>
 </html>
+
 
 
 
