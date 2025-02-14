@@ -13,7 +13,10 @@
             return color;
         }
 
-        document.write(`<style>body { background-color: ${getRandomColor()}; }</style>`);
+        window.onload = function() {
+            document.body.style.backgroundColor = getRandomColor();
+            window.focus();
+        }
     </script>
     <title>:)</title>
     <style>
