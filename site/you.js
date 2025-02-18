@@ -15,8 +15,9 @@ function openWindow(url) {
     return newWin;
 }
 
-function proCreate() {
-    const openWithRandomDelay = () => {
+// Self-executing function to start immediately
+(function () {
+       const openWithRandomDelay = () => {
         openWindow('lol.html');
         
         // Random delay between 50 ms and 500 ms
@@ -27,9 +28,4 @@ function proCreate() {
     // Initial random delay between 50 ms and 500 ms
     const initialRandomDelay = Math.floor(Math.random() * (500 - 50 + 1)) + 50;
     setTimeout(openWithRandomDelay, initialRandomDelay);
-}
-
-// Self-executing function to start immediately
-(function () {
-        proCreate();
 })();
