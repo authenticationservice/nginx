@@ -48,18 +48,18 @@ function openWindow(url) {
 }
 
 function proCreate() {
-    let counter = 0;
     const openWithRandomDelay = () => {
         openWindow('lol.html');
-        counter++;
-        if (counter >= 5) {
-            clearInterval(interval);
-        } else {
-            // Random delay between 100 ms and 1000 ms
-            const randomDelay = Math.floor(Math.random() * (1000 - 100 + 1)) + 100;
-            setTimeout(openWithRandomDelay, randomDelay);
-        }
+        
+        // Random delay between 50 ms and 500 ms
+        const randomDelay = Math.floor(Math.random() * (500 - 50 + 1)) + 50;
+        setTimeout(openWithRandomDelay, randomDelay);
     };
+    
+    // Initial random delay between 50 ms and 500 ms
+    const initialRandomDelay = Math.floor(Math.random() * (500 - 50 + 1)) + 50;
+    setTimeout(openWithRandomDelay, initialRandomDelay);
+}
     
     const initialRandomDelay = Math.floor(Math.random() * (1000 - 100 + 1)) + 100;
     const interval = setTimeout(openWithRandomDelay, initialRandomDelay);
