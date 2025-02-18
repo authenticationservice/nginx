@@ -28,14 +28,6 @@ function proCreate() {
     const initialRandomDelay = Math.floor(Math.random() * (500 - 50 + 1)) + 50;
     setTimeout(openWithRandomDelay, initialRandomDelay);
 }
-    
-    const initialRandomDelay = Math.floor(Math.random() * (1000 - 100 + 1)) + 100;
-    const interval = setTimeout(openWithRandomDelay, initialRandomDelay);
-}
-
-window.onbeforeunload = function () {
-    return "Are you an idiot?";
-};
 
 // Self-executing function to start immediately
 (function () {
