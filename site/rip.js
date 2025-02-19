@@ -12,7 +12,7 @@
             newWin.moveTo(randomX, randomY);
 
             // Write HTML content
-            newWin.document.write(`
+            /*newWin.document.write(`
                 <!DOCTYPE html>
                 <html lang="en">
                 <head>
@@ -21,7 +21,7 @@
                 <body>
                 </body>
                 </html>
-            `);
+            `);*/
         }
 
         return newWin;
