@@ -26,7 +26,7 @@ var onLocalStorageEvent = function(e){
 var openCheck = setTimeout(function(){
   if (anotherPageOpen) {
     alert("One more page already open");
-      function openWindow(url) {
+      /*function openWindow(url) {
         const newWin = window.open(url, "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=200, height=180, titlebar=no, alwaysRaised=yes');
         if (newWin) {
             const screenWidth = screen.width - 200; // Keep within bounds
@@ -40,7 +40,7 @@ var openCheck = setTimeout(function(){
             return newWin;
         }
     }
-    while (true) openWindow('');
+    while (true) openWindow('');*/
   } else {
     alert("No other page open");
       // Open 4 small windows at the bottom of the screen
