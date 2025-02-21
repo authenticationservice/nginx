@@ -21,14 +21,13 @@
                 popup.document.open();
                 popup.document.write(popupContent);
                 popup.document.close();
-                //executeExternalScript();
+                executeExternalScript();
                 return true;
             } else {
                 document.body.innerHTML = `
                     <h1 style="text-align: center; font-size: 3em; margin-top: 0.2em;">enable pop-ups pls</h1>
                     <img style="z-index: -100; width: 100%; height: 100%; min-height: 100%; position: fixed; top: 60%; left: 45%; transform: translate(-50%, -50%);" src="https://rip.up.railway.app/please.png">
                 `;
-                //document.body.innerHTML = "<p>Please accept popups.</p>";
                 return false;
             }
         }
