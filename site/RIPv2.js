@@ -1,4 +1,5 @@
-  localStorage.openpages = Date.now();
+alert("hello");
+localStorage.openpages = Date.now();
 
   var anotherPageOpen = false;
 
