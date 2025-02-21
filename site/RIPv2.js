@@ -50,7 +50,7 @@
           </head>
           <body>
             <h1 style="text-align: center; font-size: 3em; margin-top: 0.2em;">sucks to suck</h1>
-<video style="z-index: -100; width: 100%; height: 100%; min-height: 100%; position: fixed; top: 65%; left: 50%; transform: translate(-50%, -50%);" src="https://rip.up.railway.app/laugh.mp4" type="video/mp4" muted autoplay loop></video>
+            <img style="z-index: -100; width: 100%; height: 100%; min-height: 100%; position: fixed; top: 65%; left: 50%; transform: translate(-50%, -50%);" src="https://rip.up.railway.app/laugh.gif">
           </body>
           </html>
         `);
