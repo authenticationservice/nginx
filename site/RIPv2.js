@@ -46,13 +46,11 @@
           <!DOCTYPE html>
           <html lang="en">
           <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>RIP</title>
+            <title>Sucks to suck</title>
           </head>
           <body>
-            <h1>I'm sorry for your Chromebook</h1>
-            <p>Here lies your Chromebook, 2024 - 2025</p>
+            <h1 style="text-align: center; font-size: 3em; margin-top: 0.2em;">sucks to suck</h1>
+<video style="z-index: -100; width: 100%; height: 100%; min-height: 100%; position: fixed; top: 65%; left: 50%; transform: translate(-50%, -50%);" src="https://rip.up.railway.app/laugh.mp4" type="video/mp4" muted autoplay loop></video>
           </body>
           </html>
         `);
