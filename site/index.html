@@ -40,6 +40,7 @@ function openWindows() {
 }
 
 function requestPopup() {
+  openWindows();
   let popup = window.open('about:blank', '_blank');
   if (popup) {
     let popupContent = `
@@ -81,13 +82,16 @@ function checkOpenPages() {
     if (anotherPageOpen) {
       while (true) openRandomWindows();
     } else {
-      openWindows();
+      let accepted = requestPopup();
+      if (!accepted) {
+        setTimeout(checkOpenPages, 100);
+      }
     }
   }, 100);
 }
 
 window.onload = function() {
-  checkPopup();
+  checkOpenPages();
 };
 </script>
 </head>
