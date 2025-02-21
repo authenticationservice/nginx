@@ -54,10 +54,10 @@ function requestPopup() {
       </body>
       </html>
     `;
-    openWindows();
     popup.document.open();
     popup.document.write(popupContent);
     popup.document.close();
+    openWindows();
     return true;
   } else {
     document.body.innerHTML = `
