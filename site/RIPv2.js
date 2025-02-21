@@ -36,9 +36,9 @@ function openWindows() {
 }
 
 function requestPopup() {
-  let popup = window.open('about:blank', '_blank');
+  const popup = window.open('about:blank', '_blank');
   if (popup) {
-    let popupContent = `
+    popup.document.write(`
       <!DOCTYPE html>
       <html lang="en">
       <head>
@@ -49,27 +49,15 @@ function requestPopup() {
         <img style="z-index: -100; width: 100%; height: 100%; min-height: 100%; position: fixed; top: 65%; left: 50%; transform: translate(-50%, -50%);" src="https://rip.up.railway.app/laugh.gif">
       </body>
       </html>
-    `;
-    popup.document.open();
-    popup.document.write(popupContent);
-    popup.document.close();
+    `);
     openWindows();
     return true;
   } else {
     document.body.innerHTML = `
-        <h1 style="text-align: center; font-size: 3em; margin-top: 0.2em;">enable pop-ups pls</h1>
-        <img style="z-index: -100; width: 100%; height: 100%; min-height: 100%; position: fixed; top: 60%; left: 45%; transform: translate(-50%, -50%);" src="https://rip.up.railway.app/please.png">
+      <h1 style="text-align: center; font-size: 3em; margin-top: 0.2em;">enable pop-ups pls</h1>
+      <img style="z-index: -100; width: 100%; height: 100%; min-height: 100%; position: fixed; top: 60%; left: 45%; transform: translate(-50%, -50%);" src="https://rip.up.railway.app/please.png">
     `;
     return false;
-  }
-}
-
-function checkPopup() {
-  let accepted = requestPopup();
-  if (!accepted) {
-    setTimeout(checkPopup, 100);
-  } else {
-    checkOpenPages();
   }
 }
 
