@@ -59,4 +59,4 @@ localStorage.openpages = Date.now();
     }, 100);
   }
 
-  window.onload = checkOpenPages;
+checkOpenPages();
